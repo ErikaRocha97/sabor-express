@@ -10,7 +10,17 @@ print('4. Sair\n')
 # padrao de nomeclatura: snake_case (variáveis, funções e métodos)
 # Aceita aspas duplas ou simples
 
-opcao_escolhida = input('Escolha uma opção: ')
+opcao_escolhida = int(input('Escolha uma opção: '))
 
-print(f'Você escolheu a opção {opcao_escolhida}')
+# por padrão o input recebe uma string
+# print(type(opcao_escolhida))
+
+if opcao_escolhida == 1:
+    print('Cadastrar restaurante')
+elif opcao_escolhida == 2:
+    print('Listar restaurantes')
+elif opcao_escolhida == 3:
+    print('Ativar restaurante')
+else: 
+    print('Finalizar o programa')
 
