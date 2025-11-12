@@ -5,7 +5,7 @@
 # importar biblioteca
 import os
 
-restaurantes = []
+restaurantes = ['Pizza','Sushi','Sorvete']
 
 # definir funções
 def exibir_nome_do_programa():
@@ -33,8 +33,19 @@ def cadastrar_novo_restaurante():
     print('Cadastro de novo restaurante.\n')
     nome_do_restaurante = input('Digite o nome do restaurante: ')
     restaurantes.append(nome_do_restaurante)
-    print(f'O restaurante {nome_do_restaurante} foi cadastrado!\n')
-    input('Pressione enter para voltar ao menu principal.')
+    print(f'O restaurante {nome_do_restaurante} foi cadastrado!')
+    input('\nPressione enter para voltar ao menu principal.')
+    main()
+
+def listar_restaurantes():
+    os.system('cls')
+    print('Lista de restaurantes.\n')
+
+    # estrutura de repetição
+    for restaurante in restaurantes:
+        print(f'.{restaurante}')
+
+    input('\nPressione enter para voltar ao menu principal.')
     main()
 
 # por padrão o input recebe uma string
@@ -48,7 +59,7 @@ def escolher_opcao():
             case 1:
                 cadastrar_novo_restaurante()
             case 2:
-                print('Listar restaurantes')
+                listar_restaurantes()
             case 3:
                 print('Ativar restaurante')
             case 4:
