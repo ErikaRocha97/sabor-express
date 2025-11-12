@@ -5,6 +5,8 @@
 # importar biblioteca
 import os
 
+restaurantes = []
+
 # definir funções
 def exibir_nome_do_programa():
     print('''Sabor Express
@@ -26,6 +28,15 @@ def opcao_invalida():
     input('Pressione enter para voltar ao menu principal.')
     main()
 
+def cadastrar_novo_restaurante():
+    os.system('cls')
+    print('Cadastro de novo restaurante.\n')
+    nome_do_restaurante = input('Digite o nome do restaurante: ')
+    restaurantes.append(nome_do_restaurante)
+    print(f'O restaurante {nome_do_restaurante} foi cadastrado!\n')
+    input('Pressione enter para voltar ao menu principal.')
+    main()
+
 # por padrão o input recebe uma string
 # print(type(opcao_escolhida))
 
@@ -35,7 +46,7 @@ def escolher_opcao():
 
         match opcao_escolhida:
             case 1:
-                print('Adicionar restaurante')
+                cadastrar_novo_restaurante()
             case 2:
                 print('Listar restaurantes')
             case 3:
