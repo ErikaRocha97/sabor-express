@@ -1,3 +1,6 @@
+# importar biblioteca
+import os
+
 print('''Sabor Express
 ''')
 
@@ -15,6 +18,13 @@ opcao_escolhida = int(input('Escolha uma opção: '))
 # por padrão o input recebe uma string
 # print(type(opcao_escolhida))
 
+# definir função
+
+def finalizar_app():
+    # os.system('clear') no mac
+    os.system('cls')    
+    print('Finalizando o aplicativo')    
+
 if opcao_escolhida == 1:
     print('Cadastrar restaurante')
 elif opcao_escolhida == 2:
@@ -22,5 +32,5 @@ elif opcao_escolhida == 2:
 elif opcao_escolhida == 3:
     print('Ativar restaurante')
 else: 
-    print('Finalizar o programa')
+    finalizar_app()
 
