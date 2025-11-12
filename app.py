@@ -19,7 +19,7 @@ def exibir_menu():
 def finalizar_app():
     # os.system('clear') no mac
     os.system('cls')    
-    print('Finalizando o aplicativo')  
+    print('Aplicativo finalizado')  
 
 # por padrão o input recebe uma string
 # print(type(opcao_escolhida))
@@ -27,14 +27,17 @@ def finalizar_app():
 def escolher_opcao():
     opcao_escolhida = int(input('Escolha uma opção: '))
 
-    if opcao_escolhida == 1:
-        print('Cadastrar restaurante')
-    elif opcao_escolhida == 2:
-        print('Listar restaurantes')
-    elif opcao_escolhida == 3:
-        print('Ativar restaurante')
-    else: 
-        finalizar_app()
+    match opcao_escolhida:
+        case 1:
+            print('Adicionar restaurante')
+        case 2:
+            print('Listar restaurantes')
+        case 3:
+            print('Ativar restaurante')
+        case 4:
+            finalizar_app()
+        case _:
+            print('Opção inválida!')
 
 # definir como programa principal
 
