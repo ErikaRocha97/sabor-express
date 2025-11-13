@@ -5,7 +5,12 @@
 # importar biblioteca
 import os
 
-restaurantes = ['Pizza','Sushi','Sorvete']
+# dicionario: estrutura semelhante a chave-valor
+restaurantes = [
+    {'nome':'Praça', 'categoria':'Japonesa', 'ativo':False}, 
+    {'nome':'Pizza Suprema', 'categoria':'Pizza', 'ativo':True},
+    {'nome':'Cantina', 'categoria':'Italiano', 'ativo':False}
+]
 
 # definir funções
 def exibir_nome_do_programa():
@@ -39,7 +44,13 @@ def cadastrar_novo_restaurante():
     exibir_subtitulo('Cadastro de novo restaurante.')
 
     nome_do_restaurante = input('Digite o nome do restaurante: ')
-    restaurantes.append(nome_do_restaurante)
+
+    categoria_do_restaurante = input(f'Digite a categoria do restaurante {nome_do_restaurante}: ')
+    
+    dados_do_restaurante = {'nome': nome_do_restaurante, 'categoria': categoria_do_restaurante,'ativo':False}
+
+    restaurantes.append(dados_do_restaurante)
+
     print(f'\nO restaurante {nome_do_restaurante} foi cadastrado!')
     voltar_ao_menu()
 
@@ -48,7 +59,7 @@ def listar_restaurantes():
 
     # estrutura de repetição
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        print(f'- {restaurante['nome']} | {restaurante['categoria']}')
 
     voltar_ao_menu()
 
