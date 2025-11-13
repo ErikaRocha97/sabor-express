@@ -19,34 +19,38 @@ def exibir_menu():
     print('4. Sair\n')
 
 def finalizar_app():
-    # os.system('clear') no mac
-    os.system('cls')    
-    print('Aplicativo finalizado')  
+    exibir_subtitulo('Aplicativo finalizado.')
 
-def opcao_invalida():
-    print('Opção inválida!\n')
-    input('Pressione enter para voltar ao menu principal.')
-    main()
-
-def cadastrar_novo_restaurante():
-    os.system('cls')
-    print('Cadastro de novo restaurante.\n')
-    nome_do_restaurante = input('Digite o nome do restaurante: ')
-    restaurantes.append(nome_do_restaurante)
-    print(f'O restaurante {nome_do_restaurante} foi cadastrado!')
+def voltar_ao_menu():
     input('\nPressione enter para voltar ao menu principal.')
     main()
 
-def listar_restaurantes():
+def opcao_invalida():
+    print('Opção inválida!\n')
+    voltar_ao_menu()
+
+def exibir_subtitulo(texto):
+    # os.system('clear') no mac
     os.system('cls')
-    print('Lista de restaurantes.\n')
+    print(texto)
+    print()
+
+def cadastrar_novo_restaurante():
+    exibir_subtitulo('Cadastro de novo restaurante.')
+
+    nome_do_restaurante = input('Digite o nome do restaurante: ')
+    restaurantes.append(nome_do_restaurante)
+    print(f'\nO restaurante {nome_do_restaurante} foi cadastrado!')
+    voltar_ao_menu()
+
+def listar_restaurantes():
+    exibir_subtitulo('Lista de restaurantes.')
 
     # estrutura de repetição
     for restaurante in restaurantes:
         print(f'.{restaurante}')
 
-    input('\nPressione enter para voltar ao menu principal.')
-    main()
+    voltar_ao_menu()
 
 # por padrão o input recebe uma string
 # print(type(opcao_escolhida))
